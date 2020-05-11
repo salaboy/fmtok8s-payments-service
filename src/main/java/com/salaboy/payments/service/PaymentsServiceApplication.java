@@ -2,7 +2,6 @@ package com.salaboy.payments.service;
 
 import com.salaboy.cloudevents.helper.CloudEventsHelper;
 import io.cloudevents.CloudEvent;
-import io.cloudevents.extensions.ExtensionFormat;
 import io.cloudevents.json.Json;
 import io.cloudevents.v03.AttributesImpl;
 import io.cloudevents.v03.CloudEventBuilder;
@@ -11,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,8 +26,8 @@ import java.util.UUID;
 @Slf4j
 public class PaymentsServiceApplication {
 
-	@Value("${CLOUD_EVENTS_BRIDGE:http://localhost:8080}")
-	private String CLOUD_EVENTS_BRIDGE;
+	@Value("${ZEEBE_CLOUD_EVENTS_ROUTER:http://localhost:8080}")
+	private String ZEEBE_CLOUD_EVENTS_ROUTER;
 
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentsServiceApplication.class, args);
@@ -55,7 +53,7 @@ public class PaymentsServiceApplication {
 
 		String cloudEventJson = Json.encode(paymentReceivedZeebeCloudEvent);
 		log.info("Before sending Cloud Event: " + cloudEventJson);
-		WebClient webClient = WebClient.builder().baseUrl(CLOUD_EVENTS_BRIDGE).filter(logRequest()).build();
+		WebClient webClient = WebClient.builder().baseUrl(ZEEBE_CLOUD_EVENTS_ROUTER).filter(logRequest()).build();
 
 		WebClient.ResponseSpec postCloudEvent = CloudEventsHelper.createPostCloudEvent(webClient, "/", paymentReceivedZeebeCloudEvent);
 
@@ -91,7 +89,7 @@ public class PaymentsServiceApplication {
 
 				String paymentApprovedCloudEventJson = Json.encode(zeebeCloudEvent);
 				log.info("Before sending Payment Approved Cloud Event: " + paymentApprovedCloudEventJson);
-				WebClient webClientApproved = WebClient.builder().baseUrl(CLOUD_EVENTS_BRIDGE).filter(logRequest()).build();
+				WebClient webClientApproved = WebClient.builder().baseUrl(ZEEBE_CLOUD_EVENTS_ROUTER).filter(logRequest()).build();
 
 				WebClient.ResponseSpec postApprovedCloudEvent = CloudEventsHelper.createPostCloudEvent(webClientApproved, "/message", zeebeCloudEvent);
 
