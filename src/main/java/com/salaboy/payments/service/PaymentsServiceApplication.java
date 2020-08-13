@@ -49,13 +49,14 @@ public class PaymentsServiceApplication {
 
 	@PostMapping("/")
 	public String pay(@RequestBody Payment payment) throws InterruptedException, JsonProcessingException {
-
+		String paymentString = objectMapper.writeValueAsString(payment);
+		String doubleQuotedPaymentString = objectMapper.writeValueAsString(paymentString);
 		CloudEventBuilder cloudEventBuilder = CloudEventBuilder.v03()
 				.withId(UUID.randomUUID().toString())
 				.withTime(ZonedDateTime.now())
 				.withType("Payments.RequestReceived")
 				.withSource(URI.create("payments.service.default"))
-				.withData(objectMapper.writeValueAsString(payment).getBytes())
+				.withData(doubleQuotedPaymentString.getBytes())
 				.withDataContentType("application/json")
 				.withSubject("Payment Service");
 		String[] subjectSplit = payment.getSubject().split(":");
@@ -78,9 +79,10 @@ public class PaymentsServiceApplication {
 		new Thread("payments-processor") {
 			public void run() {
 
-				String paymentString = null;
+				String doubleQuotedPaymentString = null;
 				try {
-					paymentString = objectMapper.writeValueAsString(payment);
+					String paymentString = objectMapper.writeValueAsString(payment);
+					doubleQuotedPaymentString = objectMapper.writeValueAsString(paymentString);
 				} catch (JsonProcessingException e) {
 					e.printStackTrace();
 				}
@@ -90,7 +92,7 @@ public class PaymentsServiceApplication {
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					log.info("> processing payment: " + paymentString);
+					log.info("> processing payment: " + doubleQuotedPaymentString);
 				}
 
 
@@ -99,7 +101,7 @@ public class PaymentsServiceApplication {
 						.withTime(ZonedDateTime.now())
 						.withType("Payments.Authorized")
 						.withSource(URI.create("payments.service.default"))
-						.withData(paymentString.getBytes())
+						.withData(doubleQuotedPaymentString.getBytes())
 						.withDataContentType("application/json")
 						.withSubject("payments.service.default");
 
