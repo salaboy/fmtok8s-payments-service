@@ -1,10 +1,13 @@
 package com.salaboy.payments.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.salaboy.cloudevents.helper.CloudEventsHelper;
 import io.cloudevents.CloudEvent;
-import io.cloudevents.json.Json;
-import io.cloudevents.v03.AttributesImpl;
-import io.cloudevents.v03.CloudEventBuilder;
+import io.cloudevents.core.builder.CloudEventBuilder;
+import io.cloudevents.core.format.EventFormat;
+import io.cloudevents.core.provider.EventFormatProvider;
+import io.cloudevents.jackson.JsonFormat;
 import io.zeebe.cloudevents.ZeebeCloudEventsHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,30 +32,41 @@ public class PaymentsServiceApplication {
 	@Value("${ZEEBE_CLOUD_EVENTS_ROUTER:http://localhost:8080}")
 	private String ZEEBE_CLOUD_EVENTS_ROUTER;
 
+	private ObjectMapper objectMapper = new ObjectMapper();
+
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentsServiceApplication.class, args);
 	}
 
-	@PostMapping("/")
-	public String pay(@RequestBody Payment payment) throws InterruptedException {
+	private void logCloudEvent(CloudEvent cloudEvent) {
+		EventFormat format = EventFormatProvider
+				.getInstance()
+				.resolveFormat(JsonFormat.CONTENT_TYPE);
 
-		CloudEventBuilder<String> cloudEventBuilder = CloudEventBuilder.<String>builder()
+		log.info("Cloud Event: " + new String(format.serialize(cloudEvent)));
+
+	}
+
+	@PostMapping("/")
+	public String pay(@RequestBody Payment payment) throws InterruptedException, JsonProcessingException {
+
+		CloudEventBuilder cloudEventBuilder = CloudEventBuilder.v03()
 				.withId(UUID.randomUUID().toString())
 				.withTime(ZonedDateTime.now())
 				.withType("Payments.RequestReceived")
 				.withSource(URI.create("payments.service.default"))
-				.withData(Json.encode(payment))
-				.withDatacontenttype("application/json")
+				.withData(objectMapper.writeValueAsString(payment).getBytes())
+				.withDataContentType("application/json")
 				.withSubject("Payment Service");
 		String[] subjectSplit = payment.getSubject().split(":");
-		CloudEvent<AttributesImpl, String> paymentReceivedZeebeCloudEvent = ZeebeCloudEventsHelper.buildZeebeCloudEvent(cloudEventBuilder)
+		CloudEvent paymentReceivedZeebeCloudEvent = ZeebeCloudEventsHelper.buildZeebeCloudEvent(cloudEventBuilder)
 				.withWorkflowKey(subjectSplit[0])
 				.withWorkflowInstanceKey(subjectSplit[1])
 				.withJobKey(subjectSplit[2])
 				.build();
 
-		String cloudEventJson = Json.encode(paymentReceivedZeebeCloudEvent);
-		log.info("Before sending Cloud Event: " + cloudEventJson);
+
+		logCloudEvent(paymentReceivedZeebeCloudEvent);
 		WebClient webClient = WebClient.builder().baseUrl(ZEEBE_CLOUD_EVENTS_ROUTER).filter(logRequest()).build();
 
 		WebClient.ResponseSpec postCloudEvent = CloudEventsHelper.createPostCloudEvent(webClient, "/", paymentReceivedZeebeCloudEvent);
@@ -63,32 +77,39 @@ public class PaymentsServiceApplication {
 
 		new Thread("payments-processor") {
 			public void run() {
+
+				String paymentString = null;
+				try {
+					paymentString = objectMapper.writeValueAsString(payment);
+				} catch (JsonProcessingException e) {
+					e.printStackTrace();
+				}
 				for (int i = 0; i < 10; i++) {
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-					log.info("> processing payment: " + Json.encode(payment));
+					log.info("> processing payment: " + paymentString);
 				}
 
 
-				CloudEventBuilder<String> cloudEventBuilder = CloudEventBuilder.<String>builder()
+				CloudEventBuilder cloudEventBuilder = CloudEventBuilder.v03()
 						.withId(UUID.randomUUID().toString())
 						.withTime(ZonedDateTime.now())
 						.withType("Payments.Authorized")
 						.withSource(URI.create("payments.service.default"))
-						.withData(Json.encode(payment))
-						.withDatacontenttype("application/json")
+						.withData(paymentString.getBytes())
+						.withDataContentType("application/json")
 						.withSubject("payments.service.default");
 
-				CloudEvent<AttributesImpl, String> zeebeCloudEvent = ZeebeCloudEventsHelper
+				CloudEvent zeebeCloudEvent = ZeebeCloudEventsHelper
 																	.buildZeebeCloudEvent(cloudEventBuilder)
 																	.withCorrelationKey(payment.getPaymentId())
 																	.build();
 
-				String paymentApprovedCloudEventJson = Json.encode(zeebeCloudEvent);
-				log.info("Before sending Payment Approved Cloud Event: " + paymentApprovedCloudEventJson);
+				logCloudEvent(zeebeCloudEvent);
+
 				WebClient webClientApproved = WebClient.builder().baseUrl(ZEEBE_CLOUD_EVENTS_ROUTER).filter(logRequest()).build();
 
 				WebClient.ResponseSpec postApprovedCloudEvent = CloudEventsHelper.createPostCloudEvent(webClientApproved, "/message", zeebeCloudEvent);
