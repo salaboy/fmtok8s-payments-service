@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Payment {
-    private String paymentId;
+    private String reservationId;
     private Double amount;
     private String subject;
 
@@ -13,12 +13,12 @@ public class Payment {
     }
 
 
-    public String getPaymentId() {
-        return paymentId;
+    public String getReservationId() {
+        return reservationId;
     }
 
-    public void setPaymentId(String paymentId) {
-        this.paymentId = paymentId;
+    public void setReservationId(String reservationId) {
+        this.reservationId = reservationId;
     }
 
     public Double getAmount() {
@@ -35,5 +35,14 @@ public class Payment {
 
     public void setSubject(String subject) {
         this.subject = subject;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "reservationId='" + reservationId + '\'' +
+                ", amount=" + amount +
+                ", subject='" + subject + '\'' +
+                '}';
     }
 }
