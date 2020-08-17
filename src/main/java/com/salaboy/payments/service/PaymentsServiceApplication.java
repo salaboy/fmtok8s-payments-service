@@ -3,9 +3,13 @@ package com.salaboy.payments.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -55,4 +59,32 @@ public class PaymentsServiceApplication {
 		return paymentRequests.get(paymentId);
 	}
 
+}
+
+@Controller
+@Slf4j
+class PaymentsSiteController {
+
+
+	@Value("${version:0.0.0}")
+	private String version;
+
+
+
+	private RestTemplate restTemplate = new RestTemplate();
+
+
+	@GetMapping("/")
+	public String index(@RequestParam(value = "sessionId", required = true) String sessionId,
+						@RequestParam(value = "reservationId", required = true) String reservationId,
+						Model model) {
+
+		model.addAttribute("version", version);
+		model.addAttribute("sessionId", sessionId);
+		model.addAttribute("reservationId", reservationId);
+
+
+
+		return "index";
+	}
 }
