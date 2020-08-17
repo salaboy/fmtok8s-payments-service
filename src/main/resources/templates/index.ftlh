@@ -40,6 +40,7 @@
         <h3>Do not fresh, payment is being processed.</h3>
         <p>Session ID: ${sessionId}</p>
         <p>Reservation ID: ${reservationId}</p>
+        <p>Payment Status: ${status}</p>
     </div>
 
 </div>
@@ -52,7 +53,9 @@
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
 <script src="js/plugins.js"></script>
 <script type="text/javascript">
-
+    setTimeout(function() {
+        location.reload();
+    }, 1000);
 
 </script>
 

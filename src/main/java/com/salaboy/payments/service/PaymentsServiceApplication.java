@@ -3,6 +3,7 @@ package com.salaboy.payments.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,17 +16,22 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @SpringBootApplication
-@RestController
-@Slf4j
+
 public class PaymentsServiceApplication {
 
 
 
-	private ObjectMapper objectMapper = new ObjectMapper();
-
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentsServiceApplication.class, args);
 	}
+
+
+
+}
+
+@RestController
+@Slf4j
+class PaymentsRestController{
 
 	private Map<String, Boolean> paymentRequests = new ConcurrentHashMap<>();
 
@@ -58,7 +64,6 @@ public class PaymentsServiceApplication {
 	public boolean authorized(@PathVariable String paymentId){
 		return paymentRequests.get(paymentId);
 	}
-
 }
 
 @Controller
@@ -70,8 +75,8 @@ class PaymentsSiteController {
 	private String version;
 
 
-
-	private RestTemplate restTemplate = new RestTemplate();
+	@Autowired
+	private PaymentsRestController paymentsRestController;
 
 
 	@GetMapping("/")
@@ -82,6 +87,7 @@ class PaymentsSiteController {
 		model.addAttribute("version", version);
 		model.addAttribute("sessionId", sessionId);
 		model.addAttribute("reservationId", reservationId);
+		model.addAttribute("status", paymentsRestController.authorized(reservationId));
 
 
 
