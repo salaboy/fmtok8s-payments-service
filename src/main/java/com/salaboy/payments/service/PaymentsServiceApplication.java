@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -34,6 +35,7 @@ public class PaymentsServiceApplication {
 class PaymentsRestController{
 
 	private Map<String, Boolean> paymentRequests = new ConcurrentHashMap<>();
+
 
 
 	@PostMapping("/")

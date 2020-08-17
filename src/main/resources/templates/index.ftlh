@@ -40,7 +40,7 @@
         <h3>Do not fresh, payment is being processed.</h3>
         <p>Session ID: ${sessionId}</p>
         <p>Reservation ID: ${reservationId}</p>
-        <p>Payment Status: ${status}</p>
+        <p>Payment Processed??: ${status?string('yes', 'no')}</p>
     </div>
 
 </div>
