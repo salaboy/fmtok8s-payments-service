@@ -1,7 +1,6 @@
 package com.salaboy.payments.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
+
 
 import javax.annotation.PostConstruct;
 import java.util.Map;
@@ -32,12 +31,12 @@ public class PaymentsServiceApplication {
 
 @RestController
 @Slf4j
+@RequestMapping("api")
 class PaymentsRestController{
 
 	private Map<String, Boolean> paymentRequests = new ConcurrentHashMap<>();
 
-
-
+	
 	@PostMapping("/")
 	public String pay(@RequestBody Payment payment) throws InterruptedException, JsonProcessingException {
 		paymentRequests.put(payment.getReservationId(), false);
@@ -62,9 +61,10 @@ class PaymentsRestController{
 		return "OK!";
 	}
 
-	@GetMapping("/{paymentId}")
-	public boolean authorized(@PathVariable String paymentId){
-		return paymentRequests.get(paymentId);
+	@GetMapping("/{reservationId}")
+	public boolean authorized(@PathVariable String reservationId){
+		log.info("Querying for reservationId: "+reservationId );
+		return paymentRequests.get(reservationId);
 	}
 }
 
@@ -79,6 +79,7 @@ class PaymentsSiteController {
 
 	@Autowired
 	private PaymentsRestController paymentsRestController;
+
 
 
 	@GetMapping("/")
