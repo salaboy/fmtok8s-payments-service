@@ -36,7 +36,7 @@ class PaymentsRestController{
 
 	private Map<String, Boolean> paymentRequests = new ConcurrentHashMap<>();
 
-	
+
 	@PostMapping("/")
 	public String pay(@RequestBody Payment payment) throws InterruptedException, JsonProcessingException {
 		paymentRequests.put(payment.getReservationId(), false);
@@ -64,7 +64,11 @@ class PaymentsRestController{
 	@GetMapping("/{reservationId}")
 	public boolean authorized(@PathVariable String reservationId){
 		log.info("Querying for reservationId: "+reservationId );
-		return paymentRequests.get(reservationId);
+		if(!paymentRequests.containsKey(reservationId)){
+			return false;
+		}else {
+			return paymentRequests.get(reservationId);
+		}
 	}
 }
 
@@ -90,7 +94,6 @@ class PaymentsSiteController {
 		model.addAttribute("version", version);
 		model.addAttribute("sessionId", sessionId);
 		model.addAttribute("reservationId", reservationId);
-		model.addAttribute("status", paymentsRestController.authorized(reservationId));
 
 
 

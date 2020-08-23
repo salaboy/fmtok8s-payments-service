@@ -68,18 +68,16 @@
 <div class="bank-body">
     <div id="status" class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     <div id="statusText" class="copy">
-        <h4>Procesing your payment</h4>
+        <h4>Processing your payment</h4>
         <i>Please wait a minute. Don't leave this page</i>
-        <p>Session ID: ${sessionId}</p>-->
-        <p>Reservation ID: ${reservationId}</p>
-        <p>Payment Processed??: ${status?string('yes', 'no')}</p>
+        <br/>
+        Session ID: ${sessionId}
+        <br/>
+        Reservation ID: ${reservationId}
+
     </div>
 
-<#--    <div class="congrats"></div>-->
-<#--    <div class="copy">-->
-<#--        <h4>Payment Approved</h4>-->
-<#--        <i>Thanks for your purchase</i>-->
-<#--    </div>-->
+
 </div>
 
 <script src="js/vendor/modernizr-3.7.1.min.js"></script>
