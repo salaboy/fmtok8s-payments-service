@@ -1,0 +1,844 @@
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1603272067.9382386,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mstep-git-source-meta-salaboy-payments-service-m-4hsxs-2xh4z[0m
+{"level":"info","ts":1603272076.406154,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*******/payments-service.git @ df8b80d74a4f55e9d55249aa2e79226ab0c41d06 in path /workspace/source"}
+{"level":"warn","ts":1603272076.4065967,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1603272076.44477,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:df8b80d74a4f55e9d55249aa2e79226ab0c41d06
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mstep-merge-pull-refs[0m
+SKIP merge-pull-refs: Nothing to merge
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mstep-create-effective-pipeline[0m
+selected pack: /tekton/home/.**/draft/packs/github.com/jenkins-x-buildpacks/jenkins-x-kubernetes/packs/maven-java11
+Effective pipeline written to jenkins-x-release-effective.yml
+
+Showing logs for build [32mmeta-salaboy-payments-service-m-4hsxs-15[0m stage [32mmeta-pipeline[0m and container [32mstep-create-tekton-crds[0m
+running command: echo \$(**-release-version) > VERSION
+
+running command: mvn versions:set -DnewVersion=\$(cat VERSION)
+[INFO] Scanning for projects...
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-starter-parent/2.2.6.RELEASE/spring-boot-starter-parent-2.2.6.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-starter-parent/2.2.6.RELEASE/spring-boot-starter-parent-2.2.6.RELEASE.pom (8.1 kB at 11 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-dependencies/2.2.6.RELEASE/spring-boot-dependencies-2.2.6.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-dependencies/2.2.6.RELEASE/spring-boot-dependencies-2.2.6.RELEASE.pom (127 kB at 179 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-bom/2.10.3/jackson-bom-2.10.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-bom/2.10.3/jackson-bom-2.10.3.pom (13 kB at 87 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-parent/2.10/jackson-parent-2.10.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/fasterxml/jackson/jackson-parent/2.10/jackson-parent-2.10.pom (8.3 kB at 98 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/fasterxml/oss-parent/38/oss-parent-38.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/fasterxml/oss-parent/38/oss-parent-38.pom (23 kB at 461 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/micrometer/micrometer-bom/1.3.6/micrometer-bom-1.3.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/micrometer/micrometer-bom/1.3.6/micrometer-bom-1.3.6.pom (6.6 kB at 128 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/netty/netty-bom/4.1.48.Final/netty-bom-4.1.48.Final.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/netty/netty-bom/4.1.48.Final/netty-bom-4.1.48.Final.pom (7.9 kB at 214 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/oss/oss-parent/7/oss-parent-7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/oss/oss-parent/7/oss-parent-7.pom (4.8 kB at 124 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/projectreactor/reactor-bom/Dysprosium-SR6/reactor-bom-Dysprosium-SR6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/projectreactor/reactor-bom/Dysprosium-SR6/reactor-bom-Dysprosium-SR6.pom (4.1 kB at 119 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/io/rsocket/rsocket-bom/1.0.0-RC6/rsocket-bom-1.0.0-RC6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/io/rsocket/rsocket-bom/1.0.0-RC6/rsocket-bom-1.0.0-RC6.pom (3.2 kB at 102 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/logging/log4j/log4j-bom/2.12.1/log4j-bom-2.12.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/logging/log4j/log4j-bom/2.12.1/log4j-bom-2.12.1.pom (7.2 kB at 129 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/logging/logging-parent/1/logging-parent-1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/logging/logging-parent/1/logging-parent-1.pom (3.2 kB at 56 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/18/apache-18.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/18/apache-18.pom (16 kB at 448 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/eclipse/jetty/jetty-bom/9.4.27.v20200227/jetty-bom-9.4.27.v20200227.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/eclipse/jetty/jetty-bom/9.4.27.v20200227/jetty-bom-9.4.27.v20200227.pom (17 kB at 395 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/glassfish/jersey/jersey-bom/2.29.1/jersey-bom-2.29.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/glassfish/jersey/jersey-bom/2.29.1/jersey-bom-2.29.1.pom (19 kB at 512 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/eclipse/ee4j/project/1.0.5/project-1.0.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/eclipse/ee4j/project/1.0.5/project-1.0.5.pom (13 kB at 347 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-bom/1.3.71/kotlin-bom-1.3.71.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-bom/1.3.71/kotlin-bom-1.3.71.pom (8.8 kB at 144 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.5/kotlinx-coroutines-bom-1.3.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.3.5/kotlinx-coroutines-bom-1.3.5.pom (4.8 kB at 142 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/junit/junit-bom/5.5.2/junit-bom-5.5.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/junit/junit-bom/5.5.2/junit-bom-5.5.2.pom (4.4 kB at 170 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/spring-framework-bom/5.2.5.RELEASE/spring-framework-bom-5.2.5.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/spring-framework-bom/5.2.5.RELEASE/spring-framework-bom-5.2.5.RELEASE.pom (5.3 kB at 108 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/data/spring-data-releasetrain/Moore-SR6/spring-data-releasetrain-Moore-SR6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/data/spring-data-releasetrain/Moore-SR6/spring-data-releasetrain-Moore-SR6.pom (4.8 kB at 138 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/data/build/spring-data-build/2.2.6.RELEASE/spring-data-build-2.2.6.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/data/build/spring-data-build/2.2.6.RELEASE/spring-data-build-2.2.6.RELEASE.pom (7.1 kB at 103 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/integration/spring-integration-bom/5.2.5.RELEASE/spring-integration-bom-5.2.5.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/integration/spring-integration-bom/5.2.5.RELEASE/spring-integration-bom-5.2.5.RELEASE.pom (9.0 kB at 114 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/security/spring-security-bom/5.2.2.RELEASE/spring-security-bom-5.2.2.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/security/spring-security-bom/5.2.2.RELEASE/spring-security-bom-5.2.2.RELEASE.pom (5.4 kB at 51 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/session/spring-session-bom/Corn-SR2/spring-session-bom-Corn-SR2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/session/spring-session-bom/Corn-SR2/spring-session-bom-Corn-SR2.pom (2.8 kB at 30 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-maven-plugin/2.2.6.RELEASE/spring-boot-maven-plugin-2.2.6.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-maven-plugin/2.2.6.RELEASE/spring-boot-maven-plugin-2.2.6.RELEASE.pom (5.0 kB at 48 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-tools/2.2.6.RELEASE/spring-boot-tools-2.2.6.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-tools/2.2.6.RELEASE/spring-boot-tools-2.2.6.RELEASE.pom (1.8 kB at 65 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-parent/2.2.6.RELEASE/spring-boot-parent-2.2.6.RELEASE.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-parent/2.2.6.RELEASE/spring-boot-parent-2.2.6.RELEASE.pom (1.8 kB at 53 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-maven-plugin/2.2.6.RELEASE/spring-boot-maven-plugin-2.2.6.RELEASE.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/springframework/boot/spring-boot-maven-plugin/2.2.6.RELEASE/spring-boot-maven-plugin-2.2.6.RELEASE.jar (69 kB at 754 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.pom (7.1 kB at 102 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/25/maven-plugins-25.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/25/maven-plugins-25.pom (9.6 kB at 415 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/24/maven-parent-24.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/24/maven-parent-24.pom (37 kB at 971 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/14/apache-14.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/14/apache-14.pom (15 kB at 668 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-deploy-plugin/2.8.2/maven-deploy-plugin-2.8.2.jar (34 kB at 1.1 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M1/maven-surefire-plugin-3.0.0-M1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M1/maven-surefire-plugin-3.0.0-M1.pom (6.4 kB at 212 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/surefire/surefire/3.0.0-M1/surefire-3.0.0-M1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/surefire/surefire/3.0.0-M1/surefire-3.0.0-M1.pom (22 kB at 445 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/33/maven-parent-33.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/33/maven-parent-33.pom (44 kB at 775 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/21/apache-21.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/21/apache-21.pom (17 kB at 428 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M1/maven-surefire-plugin-3.0.0-M1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/3.0.0-M1/maven-surefire-plugin-3.0.0-M1.jar (40 kB at 1.0 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.pom (5.2 kB at 112 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/31/maven-plugins-31.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/31/maven-plugins-31.pom (10 kB at 371 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/31/maven-parent-31.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/31/maven-parent-31.pom (43 kB at 964 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/19/apache-19.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/19/apache-19.pom (15 kB at 419 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-clean-plugin/3.1.0/maven-clean-plugin-3.1.0.jar (30 kB at 663 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.pom (7.2 kB at 341 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-resources-plugin/3.1.0/maven-resources-plugin-3.1.0.jar (32 kB at 1.1 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-jar-plugin/3.1.2/maven-jar-plugin-3.1.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-jar-plugin/3.1.2/maven-jar-plugin-3.1.2.pom (7.3 kB at 187 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/33/maven-plugins-33.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/33/maven-plugins-33.pom (11 kB at 396 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-jar-plugin/3.1.2/maven-jar-plugin-3.1.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-jar-plugin/3.1.2/maven-jar-plugin-3.1.2.jar (28 kB at 307 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.pom (12 kB at 265 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-compiler-plugin/3.8.1/maven-compiler-plugin-3.8.1.jar (62 kB at 1.0 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-install-plugin/2.5.2/maven-install-plugin-2.5.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-install-plugin/2.5.2/maven-install-plugin-2.5.2.pom (6.4 kB at 39 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-install-plugin/2.5.2/maven-install-plugin-2.5.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-install-plugin/2.5.2/maven-install-plugin-2.5.2.jar (33 kB at 325 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-site-plugin/3.8.2/maven-site-plugin-3.8.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-site-plugin/3.8.2/maven-site-plugin-3.8.2.pom (24 kB at 815 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-site-plugin/3.8.2/maven-site-plugin-3.8.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-site-plugin/3.8.2/maven-site-plugin-3.8.2.jar (136 kB at 1.9 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/johnzon/johnzon-maven-plugin/1.2.3/johnzon-maven-plugin-1.2.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/johnzon/johnzon-maven-plugin/1.2.3/johnzon-maven-plugin-1.2.3.pom (3.6 kB at 32 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/johnzon/johnzon/1.2.3/johnzon-1.2.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/johnzon/johnzon/1.2.3/johnzon-1.2.3.pom (25 kB at 758 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/johnzon/johnzon-maven-plugin/1.2.3/johnzon-maven-plugin-1.2.3.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/johnzon/johnzon-maven-plugin/1.2.3/johnzon-maven-plugin-1.2.3.jar (26 kB at 564 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-maven-plugin/1.3.71/kotlin-maven-plugin-1.3.71.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-maven-plugin/1.3.71/kotlin-maven-plugin-1.3.71.pom (5.9 kB at 119 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-project/1.3.71/kotlin-project-1.3.71.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-project/1.3.71/kotlin-project-1.3.71.pom (10 kB at 325 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-maven-plugin/1.3.71/kotlin-maven-plugin-1.3.71.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jetbrains/kotlin/kotlin-maven-plugin/1.3.71/kotlin-maven-plugin-1.3.71.jar (80 kB at 831 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jooq/jooq-codegen-maven/3.12.4/jooq-codegen-maven-3.12.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jooq/jooq-codegen-maven/3.12.4/jooq-codegen-maven-3.12.4.pom (3.5 kB at 88 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jooq/jooq-parent/3.12.4/jooq-parent-3.12.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jooq/jooq-parent/3.12.4/jooq-parent-3.12.4.pom (20 kB at 479 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/jooq/jooq-codegen-maven/3.12.4/jooq-codegen-maven-3.12.4.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/jooq/jooq-codegen-maven/3.12.4/jooq-codegen-maven-3.12.4.jar (17 kB at 328 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.pom (3.3 kB at 45 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/27/maven-plugins-27.pom (11 kB at 183 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/26/maven-parent-26.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/26/maven-parent-26.pom (40 kB at 1.3 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/16/apache-16.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/16/apache-16.pom (15 kB at 136 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-antrun-plugin/1.8/maven-antrun-plugin-1.8.jar (36 kB at 667 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-assembly-plugin/3.1.1/maven-assembly-plugin-3.1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-assembly-plugin/3.1.1/maven-assembly-plugin-3.1.1.pom (15 kB at 305 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-assembly-plugin/3.1.1/maven-assembly-plugin-3.1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-assembly-plugin/3.1.1/maven-assembly-plugin-3.1.1.jar (236 kB at 5.0 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-dependency-plugin/3.1.2/maven-dependency-plugin-3.1.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-dependency-plugin/3.1.2/maven-dependency-plugin-3.1.2.pom (16 kB at 61 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/34/maven-plugins-34.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-plugins/34/maven-plugins-34.pom (11 kB at 465 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/34/maven-parent-34.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/34/maven-parent-34.pom (43 kB at 1.5 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/23/apache-23.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/23/apache-23.pom (18 kB at 837 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-dependency-plugin/3.1.2/maven-dependency-plugin-3.1.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-dependency-plugin/3.1.2/maven-dependency-plugin-3.1.2.jar (172 kB at 2.7 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.pom (11 kB at 49 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/release/maven-release/2.5.3/maven-release-2.5.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/release/maven-release/2.5.3/maven-release-2.5.3.pom (5.0 kB at 120 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/27/maven-parent-27.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/27/maven-parent-27.pom (41 kB at 582 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/17/apache-17.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/17/apache-17.pom (16 kB at 277 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-release-plugin/2.5.3/maven-release-plugin-2.5.3.jar (53 kB at 525 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.pom (7.3 kB at 262 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/enforcer/enforcer/3.0.0-M3/enforcer-3.0.0-M3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/enforcer/enforcer/3.0.0-M3/enforcer-3.0.0-M3.pom (7.8 kB at 139 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-enforcer-plugin/3.0.0-M3/maven-enforcer-plugin-3.0.0-M3.jar (27 kB at 474 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-failsafe-plugin/2.22.2/maven-failsafe-plugin-2.22.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-failsafe-plugin/2.22.2/maven-failsafe-plugin-2.22.2.pom (12 kB at 270 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/surefire/surefire/2.22.2/surefire-2.22.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/surefire/surefire/2.22.2/surefire-2.22.2.pom (26 kB at 561 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-failsafe-plugin/2.22.2/maven-failsafe-plugin-2.22.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-failsafe-plugin/2.22.2/maven-failsafe-plugin-2.22.2.jar (294 kB at 7.3 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-invoker-plugin/3.2.1/maven-invoker-plugin-3.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-invoker-plugin/3.2.1/maven-invoker-plugin-3.2.1.pom (14 kB at 300 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-invoker-plugin/3.2.1/maven-invoker-plugin-3.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-invoker-plugin/3.2.1/maven-invoker-plugin-3.2.1.jar (127 kB at 1.9 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-help-plugin/3.2.0/maven-help-plugin-3.2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-help-plugin/3.2.0/maven-help-plugin-3.2.0.pom (11 kB at 332 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-help-plugin/3.2.0/maven-help-plugin-3.2.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-help-plugin/3.2.0/maven-help-plugin-3.2.0.jar (86 kB at 1.2 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-javadoc-plugin/3.1.1/maven-javadoc-plugin-3.1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-javadoc-plugin/3.1.1/maven-javadoc-plugin-3.1.1.pom (18 kB at 435 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-javadoc-plugin/3.1.1/maven-javadoc-plugin-3.1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-javadoc-plugin/3.1.1/maven-javadoc-plugin-3.1.1.jar (481 kB at 5.0 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-shade-plugin/3.2.2/maven-shade-plugin-3.2.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-shade-plugin/3.2.2/maven-shade-plugin-3.2.2.pom (10 kB at 158 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-shade-plugin/3.2.2/maven-shade-plugin-3.2.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-shade-plugin/3.2.2/maven-shade-plugin-3.2.2.jar (131 kB at 2.8 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-source-plugin/3.1.0/maven-source-plugin-3.1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-source-plugin/3.1.0/maven-source-plugin-3.1.0.pom (5.5 kB at 158 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-source-plugin/3.1.0/maven-source-plugin-3.1.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-source-plugin/3.1.0/maven-source-plugin-3.1.0.jar (31 kB at 1.4 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/2.22.2/maven-surefire-plugin-2.22.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/2.22.2/maven-surefire-plugin-2.22.2.pom (5.0 kB at 161 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/2.22.2/maven-surefire-plugin-2.22.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-surefire-plugin/2.22.2/maven-surefire-plugin-2.22.2.jar (41 kB at 921 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-war-plugin/3.2.3/maven-war-plugin-3.2.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-war-plugin/3.2.3/maven-war-plugin-3.2.3.pom (9.6 kB at 229 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-war-plugin/3.2.3/maven-war-plugin-3.2.3.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/plugins/maven-war-plugin/3.2.3/maven-war-plugin-3.2.3.jar (91 kB at 1.2 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/build-helper-maven-plugin/3.0.0/build-helper-maven-plugin-3.0.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/build-helper-maven-plugin/3.0.0/build-helper-maven-plugin-3.0.0.pom (5.8 kB at 54 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/mojo-parent/40/mojo-parent-40.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/mojo-parent/40/mojo-parent-40.pom (34 kB at 1.2 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/build-helper-maven-plugin/3.0.0/build-helper-maven-plugin-3.0.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/build-helper-maven-plugin/3.0.0/build-helper-maven-plugin-3.0.0.jar (64 kB at 1.5 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/exec-maven-plugin/1.6.0/exec-maven-plugin-1.6.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/exec-maven-plugin/1.6.0/exec-maven-plugin-1.6.0.pom (13 kB at 267 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/exec-maven-plugin/1.6.0/exec-maven-plugin-1.6.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/exec-maven-plugin/1.6.0/exec-maven-plugin-1.6.0.jar (58 kB at 1.1 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/versions-maven-plugin/2.7/versions-maven-plugin-2.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/versions-maven-plugin/2.7/versions-maven-plugin-2.7.pom (17 kB at 516 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/versions-maven-plugin/2.7/versions-maven-plugin-2.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/mojo/versions-maven-plugin/2.7/versions-maven-plugin-2.7.jar (310 kB at 2.7 MB/s)
+[INFO] 
+[INFO] ---------------< com.*******.payments:payments-service >----------------
+[INFO] Building payments-service 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:set (default-cli) @ payments-service ---
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.pom (1.6 kB at 24 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven/2.2.1/maven-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven/2.2.1/maven-2.2.1.pom (22 kB at 974 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/11/maven-parent-11.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/11/maven-parent-11.pom (32 kB at 1.1 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/5/apache-5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/5/apache-5.pom (4.1 kB at 117 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.5.15/plexus-utils-1.5.15.pom (6.8 kB at 326 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.2/plexus-2.0.2.pom (12 kB at 484 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.pom (3.1 kB at 148 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.pom (1.9 kB at 78 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.0-alpha-9-stable-1/plexus-container-default-1.0-alpha-9-stable-1.pom (3.9 kB at 60 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.0.3/plexus-containers-1.0.3.pom (492 B at 18 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.4/plexus-1.0.4.pom (5.7 kB at 93 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/junit/junit/4.12/junit-4.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/junit/junit/4.12/junit-4.12.pom (24 kB at 526 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom (766 B at 21 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/hamcrest/hamcrest-parent/1.3/hamcrest-parent-1.3.pom (2.0 kB at 35 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.0.4/plexus-utils-1.0.4.pom (6.9 kB at 208 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/classworlds/classworlds/1.1-alpha-2/classworlds-1.1-alpha-2.pom (3.1 kB at 92 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.pom (880 B at 27 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.pom (12 kB at 375 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.pom (2.2 kB at 87 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.pom (3.2 kB at 93 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.pom (889 B at 34 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.14/plexus-components-1.1.14.pom (5.8 kB at 158 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.pom (2.0 kB at 67 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.pom (1.9 kB at 59 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-parent/1.5.6/slf4j-parent-1.5.6.pom (7.9 kB at 396 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.pom (3.0 kB at 119 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.pom (2.2 kB at 72 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-api/2.2.1/maven-reporting-api-2.2.1.pom (1.9 kB at 81 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting/2.2.1/maven-reporting-2.2.1.pom (1.4 kB at 18 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.1/doxia-sink-api-1.1.pom (2.0 kB at 28 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia/1.1/doxia-1.1.pom (15 kB at 370 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-logging-api/1.1/doxia-logging-api-1.1.pom (1.6 kB at 19 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.0-alpha-30/plexus-container-default-1.0-alpha-30.pom (3.5 kB at 124 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.0-alpha-30/plexus-containers-1.0-alpha-30.pom (1.9 kB at 36 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.11/plexus-1.0.11.pom (9.0 kB at 448 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.4.5/plexus-utils-1.4.5.pom (2.3 kB at 76 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/1.2-alpha-9/plexus-classworlds-1.2-alpha-9.pom (3.2 kB at 81 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.10/plexus-1.0.10.pom (8.2 kB at 229 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.pom (2.2 kB at 64 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.pom (1.7 kB at 33 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.pom (2.8 kB at 69 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.pom (1.9 kB at 7.9 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-cli/commons-cli/1.2/commons-cli-1.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-cli/commons-cli/1.2/commons-cli-1.2.pom (8.0 kB at 71 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/11/commons-parent-11.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/11/commons-parent-11.pom (25 kB at 352 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/4/apache-4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/4/apache-4.pom (4.5 kB at 173 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-api/3.0/maven-plugin-api-3.0.pom (2.3 kB at 104 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven/3.0/maven-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven/3.0/maven-3.0.pom (22 kB at 912 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/15/maven-parent-15.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/15/maven-parent-15.pom (24 kB at 1.1 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/6/apache-6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/6/apache-6.pom (13 kB at 609 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model/3.0/maven-model-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model/3.0/maven-model-3.0.pom (3.9 kB at 60 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/2.0.4/plexus-utils-2.0.4.pom (3.3 kB at 10 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.6/plexus-2.0.6.pom (17 kB at 44 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact/3.0/maven-artifact-3.0.pom (1.9 kB at 60 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.pom (5.4 kB at 233 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/inject/guice-plexus/1.4.2/guice-plexus-1.4.2.pom (3.1 kB at 149 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/inject/guice-bean/1.4.2/guice-bean-1.4.2.pom (2.6 kB at 130 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject/1.4.2/sisu-inject-1.4.2.pom (1.2 kB at 66 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-parent/1.4.2/sisu-parent-1.4.2.pom (7.8 kB at 409 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/forge/forge-parent/6/forge-parent-6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/forge/forge-parent/6/forge-parent-6.pom (11 kB at 512 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.5.4/plexus-component-annotations-1.5.4.pom (815 B at 23 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.5.4/plexus-containers-1.5.4.pom (4.2 kB at 202 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.5/plexus-2.0.5.pom (17 kB at 667 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/2.2.3/plexus-classworlds-2.2.3.pom (4.0 kB at 95 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/2.0.5/plexus-utils-2.0.5.pom (3.3 kB at 159 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.pom (5.5 kB at 260 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.pom (11 kB at 553 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.pom (2.1 kB at 98 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-4/plexus-interactivity-api-1.0-alpha-4.pom (7.1 kB at 134 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.pom (1.3 kB at 60 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/classworlds/classworlds/1.1/classworlds-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/classworlds/classworlds/1.1/classworlds-1.1.pom (3.3 kB at 175 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.pom (3.0 kB at 110 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/spice/spice-parent/12/spice-parent-12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/spice/spice-parent/12/spice-parent-12.pom (6.8 kB at 324 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/forge/forge-parent/4/forge-parent-4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/forge/forge-parent/4/forge-parent-4.pom (8.4 kB at 365 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.5.5/plexus-utils-1.5.5.pom (5.1 kB at 123 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.pom (2.1 kB at 83 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.pom (1.5 kB at 73 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.pom (2.4 kB at 62 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-components/15/maven-shared-components-15.pom (9.3 kB at 164 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/16/maven-parent-16.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/16/maven-parent-16.pom (23 kB at 271 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/7/apache-7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/7/apache-7.pom (14 kB at 437 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.0/doxia-sink-api-1.0.pom (1.4 kB at 28 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia/1.0/doxia-1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia/1.0/doxia-1.0.pom (9.6 kB at 118 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/10/maven-parent-10.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/10/maven-parent-10.pom (32 kB at 1.5 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-impl/3.0.0/maven-reporting-impl-3.0.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-impl/3.0.0/maven-reporting-impl-3.0.0.pom (7.6 kB at 246 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-components/30/maven-shared-components-30.pom (4.6 kB at 170 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/30/maven-parent-30.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-parent/30/maven-parent-30.pom (41 kB at 574 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-core/3.0/maven-core-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-core/3.0/maven-core-3.0.pom (6.6 kB at 301 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings/3.0/maven-settings-3.0.pom (1.9 kB at 65 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings-builder/3.0/maven-settings-builder-3.0.pom (2.2 kB at 92 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interpolation/1.14/plexus-interpolation-1.14.pom (910 B at 16 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.18/plexus-components-1.1.18.pom (5.4 kB at 268 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/2.0.7/plexus-2.0.7.pom (17 kB at 540 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.pom (815 B at 37 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.5.5/plexus-containers-1.5.5.pom (4.2 kB at 73 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-repository-metadata/3.0/maven-repository-metadata-3.0.pom (1.9 kB at 92 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model-builder/3.0/maven-model-builder-3.0.pom (2.2 kB at 107 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-aether-provider/3.0/maven-aether-provider-3.0.pom (2.5 kB at 107 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-api/1.7/aether-api-1.7.pom (1.7 kB at 60 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-parent/1.7/aether-parent-1.7.pom (7.7 kB at 407 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-util/1.7/aether-util-1.7.pom (2.1 kB at 103 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-impl/1.7/aether-impl-1.7.pom (3.7 kB at 123 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/aether/aether-spi/1.7/aether-spi-1.7.pom (1.7 kB at 76 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-utils/3.2.0/maven-shared-utils-3.2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-utils/3.2.0/maven-shared-utils-3.2.0.pom (4.9 kB at 234 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-io/commons-io/2.5/commons-io-2.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-io/commons-io/2.5/commons-io-2.5.pom (13 kB at 415 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/39/commons-parent-39.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/39/commons-parent-39.pom (62 kB at 939 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.7/doxia-sink-api-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.7/doxia-sink-api-1.7.pom (1.5 kB at 43 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia/1.7/doxia-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia/1.7/doxia-1.7.pom (15 kB at 436 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.pom (1.5 kB at 25 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-decoration-model/1.7.4/doxia-decoration-model-1.7.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-decoration-model/1.7.4/doxia-decoration-model-1.7.4.pom (3.4 kB at 85 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sitetools/1.7.4/doxia-sitetools-1.7.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sitetools/1.7.4/doxia-sitetools-1.7.4.pom (14 kB at 557 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.6/plexus-component-annotations-1.6.pom (748 B at 28 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.6/plexus-containers-1.6.pom (3.8 kB at 64 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/3.3.2/plexus-3.3.2.pom (22 kB at 489 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/spice/spice-parent/17/spice-parent-17.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/spice/spice-parent/17/spice-parent-17.pom (6.8 kB at 422 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/forge/forge-parent/10/forge-parent-10.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/forge/forge-parent/10/forge-parent-10.pom (14 kB at 149 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.22/plexus-utils-3.0.22.pom (3.8 kB at 160 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/3.3.1/plexus-3.3.1.pom (20 kB at 974 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.pom (4.1 kB at 113 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-lang/commons-lang/2.4/commons-lang-2.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-lang/commons-lang/2.4/commons-lang-2.4.pom (14 kB at 250 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/9/commons-parent-9.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/9/commons-parent-9.pom (22 kB at 1.0 MB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.pom (7.5 kB at 153 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcomponents-client/4.0.2/httpcomponents-client-4.0.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcomponents-client/4.0.2/httpcomponents-client-4.0.2.pom (9.0 kB at 169 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/project/4.1/project-4.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/project/4.1/project-4.1.pom (16 kB at 252 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.pom (4.9 kB at 158 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcomponents-core/4.0.1/httpcomponents-core-4.0.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcomponents-core/4.0.1/httpcomponents-core-4.0.1.pom (9.4 kB at 390 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/project/4.0/project-4.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/project/4.0/project-4.0.pom (13 kB at 147 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.pom (18 kB at 612 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/5/commons-parent-5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/5/commons-parent-5.pom (16 kB at 411 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-codec/commons-codec/1.3/commons-codec-1.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-codec/commons-codec/1.3/commons-codec-1.3.pom (6.1 kB at 244 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/xmlunit/xmlunit/1.5/xmlunit-1.5.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/xmlunit/xmlunit/1.5/xmlunit-1.5.pom (3.0 kB at 41 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-site-renderer/1.7.4/doxia-site-renderer-1.7.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-site-renderer/1.7.4/doxia-site-renderer-1.7.4.pom (6.7 kB at 181 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-skin-model/1.7.4/doxia-skin-model-1.7.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-skin-model/1.7.4/doxia-skin-model-1.7.4.pom (3.0 kB at 92 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-xhtml/1.7/doxia-module-xhtml-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-xhtml/1.7/doxia-module-xhtml-1.7.pom (1.6 kB at 30 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-modules/1.7/doxia-modules-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-modules/1.7/doxia-modules-1.7.pom (2.6 kB at 131 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-i18n/1.0-beta-7/plexus-i18n-1.0-beta-7.pom (1.1 kB at 19 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.12/plexus-components-1.1.12.pom (3.0 kB at 120 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.4.1/plexus-utils-1.4.1.pom (1.9 kB at 80 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-velocity/1.2/plexus-velocity-1.2.pom (2.8 kB at 5.7 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/4.0/plexus-components-4.0.pom (2.7 kB at 9.1 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/4.0/plexus-4.0.pom (22 kB at 60 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.1/commons-collections-3.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.1/commons-collections-3.1.pom (6.1 kB at 304 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity/1.7/velocity-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity/1.7/velocity-1.7.pom (11 kB at 472 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.pom (13 kB at 463 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.pom (18 kB at 396 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.pom (357 B at 11 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.0.3/commons-logging-1.0.3.pom (866 B at 23 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-digester/commons-digester/1.8/commons-digester-1.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-digester/commons-digester/1.8/commons-digester-1.8.pom (7.0 kB at 159 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.1/commons-logging-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.1/commons-logging-1.1.pom (6.2 kB at 126 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/log4j/log4j/1.2.12/log4j-1.2.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/log4j/log4j/1.2.12/log4j-1.2.12.pom (145 B at 3.3 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/logkit/logkit/1.0.1/logkit-1.0.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/logkit/logkit/1.0.1/logkit-1.0.1.pom (147 B at 2.3 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/avalon-framework/avalon-framework/4.1.3/avalon-framework-4.1.3.pom (167 B at 3.3 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/javax/servlet/servlet-api/2.3/servlet-api-2.3.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/javax/servlet/servlet-api/2.3/servlet-api-2.3.pom (156 B at 6.0 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-chain/commons-chain/1.1/commons-chain-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-chain/commons-chain/1.1/commons-chain-1.1.pom (6.0 kB at 120 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-digester/commons-digester/1.6/commons-digester-1.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-digester/commons-digester/1.6/commons-digester-1.6.pom (974 B at 32 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-beanutils/commons-beanutils/1.6/commons-beanutils-1.6.pom (2.3 kB at 48 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.0/commons-logging-1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.0/commons-logging-1.0.pom (163 B at 7.4 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/2.0/commons-collections-2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/2.0/commons-collections-2.0.pom (171 B at 8.6 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/2.1/commons-collections-2.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/2.1/commons-collections-2.1.pom (3.3 kB at 44 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.pom (2.2 kB at 61 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.2/commons-collections-3.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.2/commons-collections-3.2.pom (11 kB at 480 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.pom (9.0 kB at 392 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.pom (5.3 kB at 239 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/dom4j/dom4j/1.1/dom4j-1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/dom4j/dom4j/1.1/dom4j-1.1.pom (142 B at 5.9 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/oro/oro/2.0.8/oro-2.0.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/oro/oro/2.0.8/oro-2.0.8.pom (140 B at 5.0 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/sslext/sslext/1.2-0/sslext-1.2-0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/sslext/sslext/1.2-0/sslext-1.2-0.pom (653 B at 28 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.pom (4.3 kB at 205 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-parent/1.3.8/struts-parent-1.3.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-parent/1.3.8/struts-parent-1.3.8.pom (9.8 kB at 246 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-master/4/struts-master-4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-master/4/struts-master-4.pom (12 kB at 329 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/apache/2/apache-2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/apache/2/apache-2.pom (3.4 kB at 148 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/antlr/antlr/2.7.2/antlr-2.7.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/antlr/antlr/2.7.2/antlr-2.7.2.pom (145 B at 6.3 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.pom (3.1 kB at 68 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.pom (2.9 kB at 126 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity/1.6.2/velocity-1.6.2.pom (11 kB at 208 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.pom (4.1 kB at 78 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.pom (4.8 kB at 110 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-utils/3.1.0/maven-shared-utils-3.1.0.pom (5.0 kB at 207 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-provider-api/2.12/wagon-provider-api-2.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-provider-api/2.12/wagon-provider-api-2.12.pom (1.9 kB at 87 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon/2.12/wagon-2.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon/2.12/wagon-2.12.pom (21 kB at 832 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-file/2.12/wagon-file-2.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-file/2.12/wagon-file-2.12.pom (1.8 kB at 48 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-providers/2.12/wagon-providers-2.12.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-providers/2.12/wagon-providers-2.12.pom (2.8 kB at 148 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-site-renderer/1.7/doxia-site-renderer-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-site-renderer/1.7/doxia-site-renderer-1.7.pom (6.6 kB at 137 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sitetools/1.7/doxia-sitetools-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sitetools/1.7/doxia-sitetools-1.7.pom (14 kB at 272 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-decoration-model/1.7/doxia-decoration-model-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-decoration-model/1.7/doxia-decoration-model-1.7.pom (3.1 kB at 141 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-skin-model/1.7/doxia-skin-model-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-skin-model/1.7/doxia-skin-model-1.7.pom (2.9 kB at 105 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-fml/1.7/doxia-module-fml-1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-fml/1.7/doxia-module-fml-1.7.pom (4.6 kB at 150 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.pom (2.0 kB at 30 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.7.1/plexus-container-default-1.7.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.7.1/plexus-container-default-1.7.1.pom (2.8 kB at 125 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-containers/1.7.1/plexus-containers-1.7.1.pom (5.0 kB at 46 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.20/plexus-utils-3.0.20.pom (3.8 kB at 106 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.pom (5.0 kB at 167 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/xbean/xbean-reflect/3.7/xbean-reflect-3.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/xbean/xbean-reflect/3.7/xbean-reflect-3.7.pom (5.1 kB at 102 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/xbean/xbean/3.7/xbean-3.7.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/xbean/xbean/3.7/xbean-3.7.pom (15 kB at 245 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/geronimo/genesis/genesis-java5-flava/2.0/genesis-java5-flava-2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/geronimo/genesis/genesis-java5-flava/2.0/genesis-java5-flava-2.0.pom (5.5 kB at 249 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/geronimo/genesis/genesis-default-flava/2.0/genesis-default-flava-2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/geronimo/genesis/genesis-default-flava/2.0/genesis-default-flava-2.0.pom (18 kB at 742 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/geronimo/genesis/genesis/2.0/genesis-2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/geronimo/genesis/genesis/2.0/genesis-2.0.pom (18 kB at 837 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/google/collections/google-collections/1.0/google-collections-1.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/google/collections/google-collections/1.0/google-collections-1.0.pom (2.5 kB at 30 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/google/google/1/google-1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/google/google/1/google-1.pom (1.6 kB at 46 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.pom (726 B at 28 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity/1.0-alpha-6/plexus-interactivity-1.0-alpha-6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity/1.0-alpha-6/plexus-interactivity-1.0-alpha-6.pom (1.1 kB at 41 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.9/plexus-components-1.1.9.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-components/1.1.9/plexus-components-1.1.9.pom (2.4 kB at 14 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.4/plexus-utils-1.4.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/1.4/plexus-utils-1.4.pom (1.2 kB at 23 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus/1.0.9/plexus-1.0.9.pom (7.7 kB at 284 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.pom (2.1 kB at 42 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/woodstox-core-asl/4.2.0/woodstox-core-asl-4.2.0.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/woodstox-core-asl/4.2.0/woodstox-core-asl-4.2.0.pom (1.8 kB at 31 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.pom (962 B at 30 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.pom (1.4 kB at 38 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-lang/commons-lang/2.6/commons-lang-2.6.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-lang/commons-lang/2.6/commons-lang-2.6.pom (17 kB at 515 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/17/commons-parent-17.pom
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/commons/commons-parent/17/commons-parent-17.pom (31 kB at 866 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-core/2.2.1/maven-core-2.2.1.jar (178 kB at 654 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact-manager/2.2.1/maven-artifact-manager-2.2.1.jar (68 kB at 228 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-repository-metadata/2.2.1/maven-repository-metadata-2.2.1.jar (26 kB at 85 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-artifact/2.2.1/maven-artifact-2.2.1.jar (80 kB at 212 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/backport-util-concurrent/backport-util-concurrent/3.1/backport-util-concurrent-3.1.jar (332 kB at 914 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/jcl-over-slf4j/1.5.6/jcl-over-slf4j-1.5.6.jar (17 kB at 43 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-jdk14/1.5.6/slf4j-jdk14-1.5.6.jar (8.8 kB at 18 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-cli/commons-cli/1.2/commons-cli-1.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/slf4j/slf4j-api/1.5.6/slf4j-api-1.5.6.jar (22 kB at 45 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-parameter-documenter/2.2.1/maven-plugin-parameter-documenter-2.2.1.jar (22 kB at 43 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-profile/2.2.1/maven-profile-2.2.1.jar (35 kB at 69 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/classworlds/classworlds/1.1/classworlds-1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-error-diagnostics/2.2.1/maven-error-diagnostics-2.2.1.jar (13 kB at 24 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-cli/commons-cli/1.2/commons-cli-1.2.jar (41 kB at 68 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-descriptor/2.2.1/maven-plugin-descriptor-2.2.1.jar (39 kB at 64 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-monitor/2.2.1/maven-monitor-2.2.1.jar (10 kB at 16 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/classworlds/classworlds/1.1/classworlds-1.1.jar (38 kB at 58 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-sec-dispatcher/1.3/plexus-sec-dispatcher-1.3.jar (29 kB at 43 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-model/2.2.1/maven-model-2.2.1.jar (88 kB at 125 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/plexus/plexus-cipher/1.4/plexus-cipher-1.4.jar (13 kB at 19 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-api/2.2.1/maven-plugin-api-2.2.1.jar (12 kB at 17 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interpolation/1.11/plexus-interpolation-1.11.jar (51 kB at 58 kB/s)
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-settings/2.2.1/maven-settings-2.2.1.jar (49 kB at 56 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-impl/3.0.0/maven-reporting-impl-3.0.0.jar
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-utils/3.2.0/maven-shared-utils-3.2.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-plugin-registry/2.2.1/maven-plugin-registry-2.2.1.jar (30 kB at 31 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-io/commons-io/2.5/commons-io-2.5.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-api/3.0/maven-reporting-api-3.0.jar (11 kB at 11 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-decoration-model/1.7.4/doxia-decoration-model-1.7.4.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/maven-project/2.2.1/maven-project-2.2.1.jar (156 kB at 158 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/reporting/maven-reporting-impl/3.0.0/maven-reporting-impl-3.0.0.jar (18 kB at 18 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-io/commons-io/2.5/commons-io-2.5.jar (209 kB at 201 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-shared-utils/3.2.0/maven-shared-utils-3.2.0.jar (165 kB at 150 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-decoration-model/1.7.4/doxia-decoration-model-1.7.4.jar (61 kB at 54 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-provider-api/2.12/wagon-provider-api-2.12.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/shared/maven-common-artifact-filters/3.0.1/maven-common-artifact-filters-3.0.1.jar (61 kB at 53 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-file/2.12/wagon-file-2.12.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-plexus/1.4.2/sisu-inject-plexus-1.4.2.jar (202 kB at 172 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-inject-bean/1.4.2/sisu-inject-bean-1.4.2.jar (153 kB at 130 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7-noaop.jar (472 kB at 395 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-provider-api/2.12/wagon-provider-api-2.12.jar (55 kB at 45 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/wagon/wagon-file/2.12/wagon-file-2.12.jar (12 kB at 9.2 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-logging-api/1.7/doxia-logging-api-1.7.jar (12 kB at 9.0 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-codec/commons-codec/1.3/commons-codec-1.3.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-core/1.7/doxia-core-1.7.jar (167 kB at 129 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-component-annotations/1.5.5/plexus-component-annotations-1.5.5.jar (4.2 kB at 3.2 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/xmlunit/xmlunit/1.5/xmlunit-1.5.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpclient/4.0.2/httpclient-4.0.2.jar (293 kB at 220 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.7/doxia-sink-api-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar (61 kB at 45 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-site-renderer/1.7/doxia-site-renderer-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1.jar (173 kB at 126 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-skin-model/1.7/doxia-skin-model-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-codec/commons-codec/1.3/commons-codec-1.3.jar (47 kB at 34 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-xhtml/1.7/doxia-module-xhtml-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/xmlunit/xmlunit/1.5/xmlunit-1.5.jar (98 kB at 70 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-fml/1.7/doxia-module-fml-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-sink-api/1.7/doxia-sink-api-1.7.jar (11 kB at 8.0 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-site-renderer/1.7/doxia-site-renderer-1.7.jar (62 kB at 43 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity/1.7/velocity-1.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-skin-model/1.7/doxia-skin-model-1.7.jar (16 kB at 11 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-xhtml/1.7/doxia-module-xhtml-1.7.jar (17 kB at 12 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/maven/doxia/doxia-module-fml/1.7/doxia-module-fml-1.7.jar (39 kB at 26 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-digester/commons-digester/1.8/commons-digester-1.8.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-velocity/1.1.7/plexus-velocity-1.1.7.jar (7.7 kB at 5.0 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-chain/commons-chain/1.1/commons-chain-1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity/1.7/velocity-1.7.jar (450 kB at 290 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-digester/commons-digester/1.8/commons-digester-1.8.jar (144 kB at 89 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/dom4j/dom4j/1.1/dom4j-1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar (189 kB at 116 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/oro/oro/2.0.8/oro-2.0.8.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/velocity/velocity-tools/2.0/velocity-tools-2.0.jar (347 kB at 213 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/sslext/sslext/1.2-0/sslext-1.2-0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-chain/commons-chain/1.1/commons-chain-1.1.jar (90 kB at 54 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/dom4j/dom4j/1.1/dom4j-1.1.jar (457 kB at 266 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/antlr/antlr/2.7.2/antlr-2.7.2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/sslext/sslext/1.2-0/sslext-1.2-0.jar (26 kB at 15 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/oro/oro/2.0.8/oro-2.0.8.jar (65 kB at 38 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-validator/commons-validator/1.3.1/commons-validator-1.3.1.jar (139 kB at 80 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-core/1.3.8/struts-core-1.3.8.jar (329 kB at 183 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/antlr/antlr/2.7.2/antlr-2.7.2.jar (358 kB at 196 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.7.1/plexus-container-default-1.7.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-tiles/1.3.8/struts-tiles-1.3.8.jar (120 kB at 65 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/struts/struts-taglib/1.3.8/struts-taglib-1.3.8.jar (252 kB at 136 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/apache/xbean/xbean-reflect/3.7/xbean-reflect-3.7.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar (575 kB at 310 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/com/google/collections/google-collections/1.0/google-collections-1.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-utils/3.0.24/plexus-utils-3.0.24.jar (247 kB at 129 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-container-default/1.7.1/plexus-container-default-1.7.1.jar (231 kB at 117 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/apache/xbean/xbean-reflect/3.7/xbean-reflect-3.7.jar (148 kB at 74 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/woodstox-core-asl/4.2.0/woodstox-core-asl-4.2.0.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-classworlds/2.5.1/plexus-classworlds-2.5.1.jar (50 kB at 25 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/com/google/collections/google-collections/1.0/google-collections-1.0.jar (640 kB at 318 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-i18n/1.0-beta-10/plexus-i18n-1.0-beta-10.jar (12 kB at 5.3 kB/s)
+[INFO] Downloading from nexus: http://nexus/repository/maven-group/commons-lang/commons-lang/2.6/commons-lang-2.6.jar
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/javax/xml/stream/stax-api/1.0-2/stax-api-1.0-2.jar (23 kB at 10 kB/s)
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/plexus/plexus-interactivity-api/1.0-alpha-6/plexus-interactivity-api-1.0-alpha-6.jar (12 kB at 5.2 kB/s)
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/stax2-api/3.1.1/stax2-api-3.1.1.jar (182 kB at 80 kB/s)
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/org/codehaus/woodstox/woodstox-core-asl/4.2.0/woodstox-core-asl-4.2.0.jar (482 kB at 208 kB/s)
+[INFO] Downloaded from nexus: http://nexus/repository/maven-group/commons-lang/commons-lang/2.6/commons-lang-2.6.jar (284 kB at 121 kB/s)
+[INFO] Searching for local aggregator root...
+[INFO] Local aggregation root: /workspace/source
+[INFO] Processing change of com.*******.payments:payments-service:0.0.1-SNAPSHOT -> 0.0.19
+[INFO] Processing com.*******.payments:payments-service
+[INFO]     Updating project com.*******.payments:payments-service
+[INFO]         from version 0.0.1-SNAPSHOT to 0.0.19
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  26.843 s
+[INFO] Finished at: 2020-10-21T09:22:06Z
+[INFO] ------------------------------------------------------------------------
+
+running command: ** step tag --version \$(cat VERSION)
+Updating chart version in charts/payments-service/Chart.yaml to 0.0.19
+Updating repository in charts/payments-service/values.yaml to gcr.io/camunda-researchanddevelopment/payments-service
+Updating tag in charts/payments-service/values.yaml to 0.0.19
+error: Have you set up a git credential helper? See https://help.github.com/articles/caching-your-github-password-in-git/
+: git output: To https://github.com/*******/payments-service.git
+ ! [rejected]        v0.0.19 -> v0.0.19 (already exists)
+error: failed to push some refs to 'https://github.com/*******/payments-service.git'
+hint: Updates were rejected because the tag already exists in the remote.: failed to run 'git push origin v0.0.19' command in directory '', output: 'To https://github.com/*******/payments-service.git
+ ! [rejected]        v0.0.19 -> v0.0.19 (already exists)
+error: failed to push some refs to 'https://github.com/*******/payments-service.git'
+hint: Updates were rejected because the tag already exists in the remote.'
+error: failed to set the version on release pipelines: failed to run '/bin/sh -c ** step tag --version $(cat VERSION)' command in directory '/workspace/source', output: ''
+[31m
+Pipeline failed on stage 'meta-pipeline' : container 'step-create-tekton-crds'. The execution of the pipeline has stopped.[0m
