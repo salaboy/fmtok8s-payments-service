@@ -79,10 +79,7 @@ class PaymentsSiteController {
 
 	@Value("${version:0.0.0}")
 	private String version;
-
-
-	@Autowired
-	private PaymentsRestController paymentsRestController;
+	
 
 
 
