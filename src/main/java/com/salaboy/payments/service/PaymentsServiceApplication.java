@@ -1,14 +1,22 @@
 package com.salaboy.payments.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import org.springframework.http.server.ServerHttpResponse;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ServerWebExchange;
+import org.springframework.web.server.WebFilter;
+import org.springframework.web.server.WebFilterChain;
+import reactor.core.publisher.Mono;
 
 
 import javax.annotation.PostConstruct;
@@ -18,15 +26,9 @@ import java.util.concurrent.ConcurrentHashMap;
 @SpringBootApplication
 
 public class PaymentsServiceApplication {
-
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentsServiceApplication.class, args);
 	}
-
-
-
 }
 
 @RestController
@@ -80,9 +82,6 @@ class PaymentsSiteController {
 	@Value("${version:0.0.0}")
 	private String version;
 
-
-
-
 	@GetMapping("/")
 	public String index(@RequestParam(value = "sessionId", required = true) String sessionId,
 						@RequestParam(value = "reservationId", required = true) String reservationId,
@@ -95,5 +94,17 @@ class PaymentsSiteController {
 
 
 		return "index";
+	}
+
+	@Component
+	public class AddResponseHeaderWebFilter implements WebFilter {
+
+		@Override
+		public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
+			exchange.getResponse()
+					.getHeaders()
+					.add("x-frame-options", "SAMEORIGIN");
+			return chain.filter(exchange);
+		}
 	}
 }
